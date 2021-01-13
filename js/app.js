@@ -22,6 +22,13 @@ Horns.prototype.render = function(){
   $('ul').append($hornsClone);
 };
 
+// Horns.prototype.renderOption = function(){
+//   const $optionClone = $('option:first-child').clone();
+//   $optionClone.attr('value', this.keyword);
+
+// };
+
+
 $.ajax('/data/page-1.json').then(stuffThatComesBack => {
   console.log(stuffThatComesBack);
 
@@ -31,8 +38,28 @@ $.ajax('/data/page-1.json').then(stuffThatComesBack => {
   });
   console.log(hornsInstances);
 
+  //create unique keyword array here if do .includes on line 44
+  const uniqueKeywords = [];
   hornsInstances.forEach(horn => {
     horn.render();
+    //tip from Skyler(TA) use .includes() to check if this horn's keyword is included in the unique keywords array
+    const unique = uniqueKeywords.includes(horn.keyword);
+    //if it isn't (.includes() will return false) then push into the unique keywords aray
+    if (unique === false){
+      uniqueKeywords.push(horn.keyword);
+    }
   });
+  console.log(uniqueKeywords);
+  //take the unique keywords array here, and render the option elements for the dropdown
+  uniqueKeywords.forEach(keyword => {
+    const $optionClone = $('option:first-child').clone();
+    $optionClone.attr('value', keyword);
+    $optionClone.text(keyword);
+    $('select').append($optionClone);
+  });
+});
+
+$('select').on('click', () => {
+  //goal is to show only images with keyword of whatever was selected from dropdown
 });
 
