@@ -1,7 +1,43 @@
+
+
+
 img {
+  
   width: 200px;
+  padding-top: 6px;
+  margin: auto;
 }
 
-li {
-  float: left;
+h2 {
+  text-align: center;
 }
+template {
+  display: none;
+}
+ 
+ul:first-child {
+  float: left;
+  align-items: center;
+}
+
+p {
+  visibility: hidden;
+}
+#images {
+  display: inline-block;
+  columns: 300px 3;
+}
+h1 {
+  text-align: center;
+  font-size: 3em;
+  font-family: 'Potta One', cursive;
+  margin: 40px;
+}
+select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+
