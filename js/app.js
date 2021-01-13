@@ -22,7 +22,7 @@ Horns.prototype.render = function(){
   $('ul').append($hornsClone);
 };
 
-$.ajax('/data/page-1.json').then(stuffThatComesBack => {
+$.ajax('data/page-1.json').then(stuffThatComesBack => {
   console.log(stuffThatComesBack);
 
   const hornsInstances = [];
