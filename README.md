@@ -20,9 +20,9 @@
 
 - Number and name of feature: #3 Style the Application
   - Estimate of time needed to complete: 45 minutes
-  - Start time:
-  - Finish time:
-  - Actual time needed to complete:
+  - Start time: 6:40pm
+  - Finish time:7:50pm
+  - Actual time needed to complete: 1:10
 
 - Number and name of feature: Stretch Goal - Sort the images
   - Estimate of time needed to complete:
