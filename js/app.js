@@ -22,13 +22,6 @@ Horns.prototype.render = function(){
   $('ul').append($hornsClone);
 };
 
-// Horns.prototype.renderOption = function(){
-//   const $optionClone = $('option:first-child').clone();
-//   $optionClone.attr('value', this.keyword);
-
-// };
-
-
 $.ajax('/data/page-1.json').then(stuffThatComesBack => {
   console.log(stuffThatComesBack);
 
@@ -49,7 +42,7 @@ $.ajax('/data/page-1.json').then(stuffThatComesBack => {
       uniqueKeywords.push(horn.keyword);
     }
   });
-  console.log(uniqueKeywords);
+  // console.log(uniqueKeywords);
   //take the unique keywords array here, and render the option elements for the dropdown
   uniqueKeywords.forEach(keyword => {
     const $optionClone = $('option:first-child').clone();
@@ -57,9 +50,21 @@ $.ajax('/data/page-1.json').then(stuffThatComesBack => {
     $optionClone.text(keyword);
     $('select').append($optionClone);
   });
+
+  $('select').on('change', function() {
+    //tip from Nicco(TA) to grab this.val()
+    const chosenKeyword = $(this).val();
+    // console.log($(this).val());
+    //goal is to show only images with keyword of whatever was selected from dropdown
+    //target all list items and hide them
+    $('li').hide();
+    //target items with keyword of what was selected
+    $(`li:contains(${chosenKeyword})`).show();
+    //tip from Nicco(TA) to bring all elements back if user goes back to select default
+    if (chosenKeyword === 'default'){
+      $('li').show();
+    }
+  });
 });
 
-$('select').on('click', () => {
-  //goal is to show only images with keyword of whatever was selected from dropdown
-});
 
