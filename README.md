@@ -1,10 +1,10 @@
-# Lab - 02
+# Lab - 02 and 03
 
 ## jQuery Selectors and Events
 
 ## Authors: Clement Buchanan and Carly Dekock
 
-### Time Estimates
+### Time Estimates - Lab 02
 
 - Number and name of feature: #1 Display Images
   - Estimate of time needed to complete: 45 minutes
@@ -28,4 +28,30 @@
   - Estimate of time needed to complete:
   - Start time:
   - Finish time:
+  - Actual time needed to complete:
+
+## Time Estimates - Lab 03
+
+- Number and name of feature: #1 Pagination
+  - Estimate of time needed to complete: 45 min
+  - Start time: 3:00pm
+  - Finish time: 5:30pm
+  - Actual time needed to complete: 2.5 hours
+
+- Number and name of feature: #2 Templating
+  - Estimate of time needed to complete: 45 min
+  - Start time: 
+  - Finish time: 
+  - Actual time needed to complete:
+
+- Number and name of feature: #3 Styling with Flexbox
+  - Estimate of time needed to complete: 45 min
+  - Start time: 
+  - Finish time: 
+  - Actual time needed to complete:
+
+- Number and name of feature: #4 Sort the images
+  - Estimate of time needed to complete: 45 min
+  - Start time: 
+  - Finish time: 
   - Actual time needed to complete:
