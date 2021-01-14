@@ -52,6 +52,6 @@
 
 - Number and name of feature: #4 Sort the images
   - Estimate of time needed to complete: 45 min
-  - Start time: 
-  - Finish time: 
+  - Start time: 8:00pm
+  - Finish time: 9:00pm
   - Actual time needed to complete:

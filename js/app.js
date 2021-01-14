@@ -26,7 +26,7 @@ function Horns(name, url, description, keyword, horns, pageNumber) {
 //   $('ul').append($hornsClone);
 // };
 
-Horns.prototype.render = function(){
+Horns.prototype.render = function () {
   const htmlTemplateString = $('#photo-template').html();
   const object = this;
   const renderedHtml = Mustache.render(htmlTemplateString, object);
@@ -87,8 +87,19 @@ $.ajax('data/page-2.json').then(moreStuff => {
           $('li').show();
         }
       });
+      
+      // hornsInstances.sort((left, right) => {
+      //   if (left.title > right.title) {
+      //     return 1;
+      //   } else if (left.title < right.title) {
+      //     return -1;
+      //   } else {
+      //     return 0;
+      //   }
+      // });
+      // $('li').remove();
+      // hornsInstances.forEach(horn => horn.render());
     });
-
   });
 
 $('#pageone').on('click', function () {
@@ -103,3 +114,30 @@ $('#pagetwo').on('click', function () {
   pageNumber = '.page2';
 });
 
+$('#bytitle').on('click', function () {
+  hornsInstances.sort((left, right) => {
+    if (left.title > right.title) {
+      return 1;
+    } else if (left.title < right.title) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  $('li').remove();
+  hornsInstances.forEach(horn => horn.render());
+});
+
+$('#numhorns').on('click', function () {
+  hornsInstances.sort((left, right) => {
+    if (left.horns > right.horns) {
+      return 1;
+    } else if (left.horns < right.horns) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  $('li').remove();
+  hornsInstances.forEach(horn => horn.render());
+});
