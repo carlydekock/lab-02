@@ -12,19 +12,27 @@ function Horns(name, url, description, keyword, horns, pageNumber) {
   this.pageNumber = pageNumber;
 }
 
-Horns.prototype.render = function () {
-  const $hornsClone = $('li:first-child').clone().addClass(this.pageNumber).attr('value', this.keyword);
-  const $h2 = $hornsClone.find('h2');
-  $h2.text(this.title);
+// Horns.prototype.render = function () {
+//   const $hornsClone = $('li:first-child').clone().addClass(this.pageNumber).attr('value', this.keyword);
+//   const $h2 = $hornsClone.find('h2');
+//   $h2.text(this.title);
 
-  const $img = $hornsClone.find('img');
-  $img.attr('src', this.image_url);
-  $img.attr('alt', this.description);
+//   const $img = $hornsClone.find('img');
+//   $img.attr('src', this.image_url);
+//   $img.attr('alt', this.description);
 
-  $hornsClone.find('p').text(this.description);
+//   $hornsClone.find('p').text(this.description);
 
-  $('ul').append($hornsClone);
+//   $('ul').append($hornsClone);
+// };
+
+Horns.prototype.render = function(){
+  const htmlTemplateString = $('#photo-template').html();
+  const object = this;
+  const renderedHtml = Mustache.render(htmlTemplateString, object);
+  $('ul').append(renderedHtml);
 };
+
 
 $.ajax('data/page-2.json').then(moreStuff => {
   moreStuff.forEach((horn) => {
